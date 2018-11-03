@@ -7,6 +7,7 @@ public class UserControl : MonoBehaviour
 
     private float m_turn;
     private float m_forward;
+    private bool m_jump;
 
     private character m_character;
 
@@ -19,6 +20,7 @@ public class UserControl : MonoBehaviour
     {
         m_turn = Input.GetAxis("Horizontal");
         m_forward = Input.GetAxis("Vertical");
-        m_character.Move(m_turn, m_forward);
+        m_jump = Input.GetButtonDown("Jump");
+        m_character.Move(m_turn, m_forward, m_jump);
     }
 }
